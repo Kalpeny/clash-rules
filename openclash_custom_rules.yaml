@@ -1,0 +1,41 @@
+rules:
+# ==========================================
+# 0. 富途/Moomoo 强制代理
+# ==========================================
+- DOMAIN-SUFFIX,moomoo.com,🚀 节点选择
+- DOMAIN-SUFFIX,futunn.com,🚀 节点选择
+- DOMAIN-SUFFIX,futuhk.com,🚀 节点选择
+- DOMAIN-SUFFIX,futu.im,🚀 节点选择
+- DOMAIN-SUFFIX,futu5.com,🚀 节点选择
+- DOMAIN-SUFFIX,ifu.com,🚀 节点选择
+- DOMAIN-SUFFIX,futuapi.com,🚀 节点选择
+- DOMAIN-SUFFIX,moomootech.com,🚀 节点选择
+- DOMAIN-KEYWORD,moomoo,🚀 节点选择
+- DOMAIN-KEYWORD,futu,🚀 节点选择
+
+# ==========================================
+# 1. 媒体刮削规则 (必须走代理)
+# ==========================================
+# --- 基础影视刮削 ---
+- DOMAIN-SUFFIX,themoviedb.org,🚀 节点选择
+- DOMAIN-SUFFIX,tmdb.org,🚀 节点选择
+- DOMAIN-SUFFIX,thetvdb.com,🚀 节点选择
+- DOMAIN-SUFFIX,fanart.tv,🚀 节点选择
+- DOMAIN-SUFFIX,imdb.com,🚀 节点选择
+- DOMAIN-SUFFIX,imdb.ws,🚀 节点选择
+
+# --- 特殊影视刮削 (针对 Byte-Muse / MetaTube) ---
+- DOMAIN-SUFFIX,javdb.com,🚀 节点选择
+- DOMAIN-SUFFIX,javbus.com,🚀 节点选择
+- DOMAIN-SUFFIX,btyjscl.com,🚀 节点选择
+- DOMAIN-SUFFIX,avbase.net,🚀 节点选择
+- DOMAIN-SUFFIX,madonna-av.com,🚀 节点选择
+- DOMAIN-SUFFIX,ideapocket.com,🚀 节点选择
+- DOMAIN-SUFFIX,dmm.co.jp,🚀 节点选择
+- DOMAIN-SUFFIX,s1s1s1.com,🚀 节点选择
+- DOMAIN-SUFFIX,wanz-factory.com,🚀 节点选择
+- DOMAIN-SUFFIX,moodyz.com,🚀 节点选择
+
+# --- 社区讨论 ---
+- DOMAIN-SUFFIX,hostloc.com,🚀 节点选择
+- DOMAIN-SUFFIX,nodeseek.com,🚀 节点选择
