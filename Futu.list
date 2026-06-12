@@ -1,0 +1,12 @@
+# Futu/Moomoo 代理规则
+# 强制走代理，避免被GEOIP判定为大陆直连
+DOMAIN-SUFFIX,moomoo.com
+DOMAIN-SUFFIX,futunn.com
+DOMAIN-SUFFIX,futuhk.com
+DOMAIN-SUFFIX,futu.im
+DOMAIN-SUFFIX,futu5.com
+DOMAIN-SUFFIX,ifu.com
+DOMAIN-SUFFIX,futuapi.com
+DOMAIN-SUFFIX,moomootech.com
+DOMAIN-KEYWORD,moomoo
+DOMAIN-KEYWORD,futu
