@@ -1,0 +1,17 @@
+# 媒体刮削代理规则 (MoviePilot/ByteMuse/MetaTube)
+DOMAIN-SUFFIX,themoviedb.org
+DOMAIN-SUFFIX,tmdb.org
+DOMAIN-SUFFIX,thetvdb.com
+DOMAIN-SUFFIX,fanart.tv
+DOMAIN-SUFFIX,imdb.com
+DOMAIN-SUFFIX,imdb.ws
+DOMAIN-SUFFIX,javdb.com
+DOMAIN-SUFFIX,javbus.com
+DOMAIN-SUFFIX,btyjscl.com
+DOMAIN-SUFFIX,avbase.net
+DOMAIN-SUFFIX,madonna-av.com
+DOMAIN-SUFFIX,ideapocket.com
+DOMAIN-SUFFIX,dmm.co.jp
+DOMAIN-SUFFIX,s1s1s1.com
+DOMAIN-SUFFIX,wanz-factory.com
+DOMAIN-SUFFIX,moodyz.com
