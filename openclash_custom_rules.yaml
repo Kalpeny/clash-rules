@@ -10,8 +10,42 @@ rules:
 - DOMAIN-SUFFIX,ifu.com,🚀 节点选择
 - DOMAIN-SUFFIX,futuapi.com,🚀 节点选择
 - DOMAIN-SUFFIX,moomootech.com,🚀 节点选择
+- DOMAIN-SUFFIX,futuhn.com,🚀 节点选择
+- DOMAIN-SUFFIX,futufin.com,🚀 节点选择
+- DOMAIN-SUFFIX,fututrade.com,🚀 节点选择
+- DOMAIN-SUFFIX,futuesop.com,🚀 节点选择
+- DOMAIN-SUFFIX,futuin.com,🚀 节点选择
+- DOMAIN-SUFFIX,futuhk1.com,🚀 节点选择
+- DOMAIN-SUFFIX,futuhongkong.com,🚀 节点选择
+- DOMAIN-SUFFIX,futustatic.com,🚀 节点选择
+- DOMAIN-SUFFIX,qtlcdn.com,🚀 节点选择
 - DOMAIN-KEYWORD,moomoo,🚀 节点选择
 - DOMAIN-KEYWORD,futu,🚀 节点选择
+# 富途/腾讯云 IP 段
+- IP-CIDR,1.12.0.0/14,🚀 节点选择,no-resolve
+- IP-CIDR,14.152.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,42.192.0.0/14,🚀 节点选择,no-resolve
+- IP-CIDR,43.128.0.0/11,🚀 节点选择,no-resolve
+- IP-CIDR,43.168.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,43.174.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,49.51.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,49.232.0.0/14,🚀 节点选择,no-resolve
+- IP-CIDR,101.32.0.0/15,🚀 节点选择,no-resolve
+- IP-CIDR,106.52.0.0/14,🚀 节点选择,no-resolve
+- IP-CIDR,111.230.0.0/15,🚀 节点选择,no-resolve
+- IP-CIDR,114.132.0.0/14,🚀 节点选择,no-resolve
+- IP-CIDR,118.24.0.0/14,🚀 节点选择,no-resolve
+- IP-CIDR,118.88.0.0/14,🚀 节点选择,no-resolve
+- IP-CIDR,119.28.0.0/15,🚀 节点选择,no-resolve
+- IP-CIDR,119.91.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,119.147.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,121.4.0.0/15,🚀 节点选择,no-resolve
+- IP-CIDR,124.156.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,129.211.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,129.226.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,170.106.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,175.178.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,193.112.0.0/16,🚀 节点选择,no-resolve
 
 # ==========================================
 # 1. 媒体刮削规则 (必须走代理)
