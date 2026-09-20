@@ -1,5 +1,15 @@
 rules:
 # ==========================================
+# 局域网 / 自建服务特例直连
+# ==========================================
+# qBittorrent 容器整机直连（防止下载流量消耗代理）
+- SRC-IP-CIDR,[IP]/32,DIRECT,no-resolve
+
+# [AUTO] 199222.xyz 自建服务直连
+- DOMAIN-SUFFIX,199222.xyz,DIRECT
+- IP-CIDR,[IP]/24,DIRECT
+
+# ==========================================
 # 0. 富途/Moomoo 强制代理
 # ==========================================
 - DOMAIN-SUFFIX,moomoo.com,🚀 节点选择
@@ -22,30 +32,30 @@ rules:
 - DOMAIN-KEYWORD,moomoo,🚀 节点选择
 - DOMAIN-KEYWORD,futu,🚀 节点选择
 # 富途/腾讯云 IP 段
-- IP-CIDR,1.12.0.0/14,🚀 节点选择,no-resolve
-- IP-CIDR,14.152.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,42.192.0.0/14,🚀 节点选择,no-resolve
-- IP-CIDR,43.128.0.0/11,🚀 节点选择,no-resolve
-- IP-CIDR,43.168.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,43.174.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,49.51.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,49.232.0.0/14,🚀 节点选择,no-resolve
-- IP-CIDR,101.32.0.0/15,🚀 节点选择,no-resolve
-- IP-CIDR,106.52.0.0/14,🚀 节点选择,no-resolve
-- IP-CIDR,111.230.0.0/15,🚀 节点选择,no-resolve
-- IP-CIDR,114.132.0.0/14,🚀 节点选择,no-resolve
-- IP-CIDR,118.24.0.0/14,🚀 节点选择,no-resolve
-- IP-CIDR,118.88.0.0/14,🚀 节点选择,no-resolve
-- IP-CIDR,119.28.0.0/15,🚀 节点选择,no-resolve
-- IP-CIDR,119.91.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,119.147.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,121.4.0.0/15,🚀 节点选择,no-resolve
-- IP-CIDR,124.156.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,129.211.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,129.226.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,170.106.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,175.178.0.0/16,🚀 节点选择,no-resolve
-- IP-CIDR,193.112.0.0/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/14,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/14,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/11,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/14,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/15,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/14,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/15,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/14,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/14,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/14,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/15,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/15,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
 
 # ==========================================
 # 1. 媒体刮削规则 (必须走代理)
@@ -70,6 +80,319 @@ rules:
 - DOMAIN-SUFFIX,wanz-factory.com,🚀 节点选择
 - DOMAIN-SUFFIX,moodyz.com,🚀 节点选择
 
-# --- 社区讨论 ---
+# ==========================================
+# 2. 社区讨论
+# ==========================================
 - DOMAIN-SUFFIX,hostloc.com,🚀 节点选择
 - DOMAIN-SUFFIX,nodeseek.com,🚀 节点选择
+
+# ==========================================
+# 3. WifiCall UK (英国通话走代理)
+# ==========================================
+- DOMAIN-KEYWORD,epdg.epc.mnc030.mcc234,🚀 节点选择
+- DOMAIN-KEYWORD,epdg.epc.mnc033.mcc234,🚀 节点选择
+- DOMAIN-SUFFIX,ee.co.uk,🚀 节点选择
+- DOMAIN-KEYWORD,epdg.epc.mnc015.mcc234,🚀 节点选择
+- DOMAIN-SUFFIX,entsrv-uk.vodafone.com,🚀 节点选择
+- DOMAIN-SUFFIX,vuk-gto.prod.ondemandconnectivity.com,🚀 节点选择
+- DOMAIN-SUFFIX,ss.epdg.epc.mnc015.mcc234.pub.3gppnetwork.org,🚀 节点选择
+- DOMAIN-SUFFIX,ss.epdg.epc.geo.mnc015.mcc234.pub.3gppnetwork.org,🚀 节点选择
+- DOMAIN-KEYWORD,epdg.epc.mnc020.mcc234,🚀 节点选择
+- DOMAIN-KEYWORD,epdg.epc.mnc010.mcc234,🚀 节点选择
+- DOMAIN-KEYWORD,epdg.epc.mnc071.mcc234,🚀 节点选择
+- DOMAIN-SUFFIX,epdg.epc.mnc071.mcc234.pub.3gppnetwork.org,🚀 节点选择
+- DOMAIN-KEYWORD,mcc234,🚀 节点选择
+- IP-CIDR,[IP]/19,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/19,🚀 节点选择,no-resolve
+- DOMAIN,vfgb.idemia.io,🚀 节点选择
+- IP-CIDR,[IP]/17,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- DOMAIN-SUFFIX,ct.ee.co.uk,🚀 节点选择
+- IP-CIDR,[IP]/16,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/19,🚀 节点选择,no-resolve
+- IP-CIDR,[IP]/23,🚀 节点选择,no-resolve
+- DOMAIN-SUFFIX,epdg.epc.mnc010.mcc234.pub.3gppnetwork.org,🚀 节点选择
+- DOMAIN-SUFFIX,ims.mnc010.mcc234.3gppnetwork.org,🚀 节点选择
+
+# ==========================================
+# 4. BT/PT 下载防泄漏规则 (必须直连 DIRECT)
+# ==========================================
+# 注意：基于路由器的透明代理，PROCESS-NAME 规则已删除（因为无法跨设备识别进程）
+
+# --- BT/PT 协议及端口防泄露 (P2P 流量直连) ---
+- DST-PORT,6881-6889,DIRECT
+- DST-PORT,51413,DIRECT
+
+# --- 常见 PT 站点 & Tracker 关键词 ---
+- DOMAIN-KEYWORD,announce,DIRECT
+- DOMAIN-KEYWORD,torrent,DIRECT
+- DOMAIN-KEYWORD,tracker,DIRECT
+- DOMAIN-KEYWORD,m-team,DIRECT
+- DOMAIN-KEYWORD,chdbits,DIRECT
+
+# --- PT 站点域名后缀 (极详尽版) ---
+- DOMAIN-SUFFIX,m-team.cc,DIRECT
+- DOMAIN-SUFFIX,m-team.io,DIRECT
+- DOMAIN-SUFFIX,makeoxc.co,DIRECT
+- DOMAIN-SUFFIX,manfuz.co,DIRECT
+- DOMAIN-SUFFIX,1ptba.com,DIRECT
+- DOMAIN-SUFFIX,2xfree.org,DIRECT
+- DOMAIN-SUFFIX,52pt.site,DIRECT
+- DOMAIN-SUFFIX,aidoru-online.me,DIRECT
+- DOMAIN-SUFFIX,alpharatio.cc,DIRECT
+- DOMAIN-SUFFIX,animebytes.tv,DIRECT
+- DOMAIN-SUFFIX,animetorrents.me,DIRECT
+- DOMAIN-SUFFIX,anthelion.me,DIRECT
+- DOMAIN-SUFFIX,asiancinema.me,DIRECT
+- DOMAIN-SUFFIX,audiences.me,DIRECT
+- DOMAIN-SUFFIX,avgv.cc,DIRECT
+- DOMAIN-SUFFIX,avistaz.to,DIRECT
+- DOMAIN-SUFFIX,awesome-hd.me,DIRECT
+- DOMAIN-SUFFIX,beitai.pt,DIRECT
+- DOMAIN-SUFFIX,beyond-hd.me,DIRECT
+- DOMAIN-SUFFIX,bibliotik.me,DIRECT
+- DOMAIN-SUFFIX,bittorrent.com,DIRECT
+- DOMAIN-SUFFIX,blutopia.cc,DIRECT
+- DOMAIN-SUFFIX,broadcasthe.net,DIRECT
+- DOMAIN-SUFFIX,bt.byr.cn,DIRECT
+- DOMAIN-SUFFIX,bt.neu6.edu.cn,DIRECT
+- DOMAIN-SUFFIX,btschool.club,DIRECT
+- DOMAIN-SUFFIX,bwtorrents.tv,DIRECT
+- DOMAIN-SUFFIX,byr.pt,DIRECT
+- DOMAIN-SUFFIX,ccfbits.org,DIRECT
+- DOMAIN-SUFFIX,cgpeers.com,DIRECT
+- DOMAIN-SUFFIX,chdbits.co,DIRECT
+- DOMAIN-SUFFIX,cinemageddon.net,DIRECT
+- DOMAIN-SUFFIX,cinematik.net,DIRECT
+- DOMAIN-SUFFIX,cinemaz.to,DIRECT
+- DOMAIN-SUFFIX,classix-unlimited.co.uk,DIRECT
+- DOMAIN-SUFFIX,concertos.live,DIRECT
+- DOMAIN-SUFFIX,creditracker.net,DIRECT
+- DOMAIN-SUFFIX,dicmusic.club,DIRECT
+- DOMAIN-SUFFIX,discfan.net,DIRECT
+- DOMAIN-SUFFIX,dxdhd.com,DIRECT
+- DOMAIN-SUFFIX,eastgame.org,DIRECT
+- DOMAIN-SUFFIX,empornium.me,DIRECT
+- DOMAIN-SUFFIX,et8.org,DIRECT
+- DOMAIN-SUFFIX,exoticaz.to,DIRECT
+- DOMAIN-SUFFIX,extremlymtorrents.ws,DIRECT
+- DOMAIN-SUFFIX,filelist.io,DIRECT
+- DOMAIN-SUFFIX,gainbound.net,DIRECT
+- DOMAIN-SUFFIX,gazellegames.net,DIRECT
+- DOMAIN-SUFFIX,gfxpeers.net,DIRECT
+- DOMAIN-SUFFIX,hd-space.org,DIRECT
+- DOMAIN-SUFFIX,hd-torrents.org,DIRECT
+- DOMAIN-SUFFIX,hd4.xyz,DIRECT
+- DOMAIN-SUFFIX,hd4fans.org,DIRECT
+- DOMAIN-SUFFIX,hdarea.co,DIRECT
+- DOMAIN-SUFFIX,hdatmos.club,DIRECT
+- DOMAIN-SUFFIX,hdbd.us,DIRECT
+- DOMAIN-SUFFIX,hdbits.org,DIRECT
+- DOMAIN-SUFFIX,hdchina.org,DIRECT
+- DOMAIN-SUFFIX,hdcity.city,DIRECT
+- DOMAIN-SUFFIX,hddolby.com,DIRECT
+- DOMAIN-SUFFIX,hdfans.org,DIRECT
+- DOMAIN-SUFFIX,hdhome.org,DIRECT
+- DOMAIN-SUFFIX,hdpost.top,DIRECT
+- DOMAIN-SUFFIX,hdroute.org,DIRECT
+- DOMAIN-SUFFIX,hdsky.me,DIRECT
+- DOMAIN-SUFFIX,hdstreet.club,DIRECT
+- DOMAIN-SUFFIX,hdtime.org,DIRECT
+- DOMAIN-SUFFIX,hdupt.com,DIRECT
+- DOMAIN-SUFFIX,hdzone.me,DIRECT
+- DOMAIN-SUFFIX,hhanclub.top,DIRECT
+- DOMAIN-SUFFIX,hitpt.com,DIRECT
+- DOMAIN-SUFFIX,hitpt.org,DIRECT
+- DOMAIN-SUFFIX,hudbt.hust.edu.cn,DIRECT
+- DOMAIN-SUFFIX,icetorrent.org,DIRECT
+- DOMAIN-SUFFIX,iptorrents.com,DIRECT
+- DOMAIN-SUFFIX,j99.info,DIRECT
+- DOMAIN-SUFFIX,joyhd.net,DIRECT
+- DOMAIN-SUFFIX,jpopsuki.eu,DIRECT
+- DOMAIN-SUFFIX,kamept.com,DIRECT
+- DOMAIN-SUFFIX,karagarga.in,DIRECT
+- DOMAIN-SUFFIX,keepfrds.com,DIRECT
+- DOMAIN-SUFFIX,landof.tv,DIRECT
+- DOMAIN-SUFFIX,leaguehd.com,DIRECT
+- DOMAIN-SUFFIX,lemonhd.org,DIRECT
+- DOMAIN-SUFFIX,lztr.me,DIRECT
+- DOMAIN-SUFFIX,madsrevolution.net,DIRECT
+- DOMAIN-SUFFIX,moecat.best,DIRECT
+- DOMAIN-SUFFIX,morethan.tv,DIRECT
+- DOMAIN-SUFFIX,msg.vg,DIRECT
+- DOMAIN-SUFFIX,myanonamouse.net,DIRECT
+- DOMAIN-SUFFIX,nanyangpt.com,DIRECT
+- DOMAIN-SUFFIX,ncore.cc,DIRECT
+- DOMAIN-SUFFIX,nebulance.io,DIRECT
+- DOMAIN-SUFFIX,nicept.net,DIRECT
+- DOMAIN-SUFFIX,npupt.com,DIRECT
+- DOMAIN-SUFFIX,nwsuaf6.edu.cn,DIRECT
+- DOMAIN-SUFFIX,open.cd,DIRECT
+- DOMAIN-SUFFIX,oppaiti.me,DIRECT
+- DOMAIN-SUFFIX,orpheus.network,DIRECT
+- DOMAIN-SUFFIX,ourbits.club,DIRECT
+- DOMAIN-SUFFIX,passthepopcorn.me,DIRECT
+- DOMAIN-SUFFIX,pornbits.net,DIRECT
+- DOMAIN-SUFFIX,privatehd.to,DIRECT
+- DOMAIN-SUFFIX,pterclub.com,DIRECT
+- DOMAIN-SUFFIX,pthome.net,DIRECT
+- DOMAIN-SUFFIX,ptsbao.club,DIRECT
+- DOMAIN-SUFFIX,pttime.org,DIRECT
+- DOMAIN-SUFFIX,pussytorrents.org,DIRECT
+- DOMAIN-SUFFIX,qingwa.pro,DIRECT
+- DOMAIN-SUFFIX,redacted.ch,DIRECT
+- DOMAIN-SUFFIX,sdbits.org,DIRECT
+- DOMAIN-SUFFIX,sharkpt.net,DIRECT
+- DOMAIN-SUFFIX,sjtu.edu.cn,DIRECT
+- DOMAIN-SUFFIX,skyey2.com,DIRECT
+- DOMAIN-SUFFIX,soulvoice.club,DIRECT
+- DOMAIN-SUFFIX,springsunday.net,DIRECT
+- DOMAIN-SUFFIX,tju.pt,DIRECT
+- DOMAIN-SUFFIX,tjupt.org,DIRECT
+- DOMAIN-SUFFIX,torrentday.com,DIRECT
+- DOMAIN-SUFFIX,torrentleech.org,DIRECT
+- DOMAIN-SUFFIX,torrentseeds.org,DIRECT
+- DOMAIN-SUFFIX,totheglory.im,DIRECT
+- DOMAIN-SUFFIX,trontv.com,DIRECT
+- DOMAIN-SUFFIX,u2.dmhy.org,DIRECT
+- DOMAIN-SUFFIX,uhdbits.org,DIRECT
+- DOMAIN-SUFFIX,xauat6.edu.cn,DIRECT
+- DOMAIN-SUFFIX,qingwapt.com,DIRECT
+- DOMAIN-SUFFIX,rousi.zip,DIRECT
+
+# --- 具体的 Tracker 域名 ---
+- DOMAIN,0123456789nonexistent.com,DIRECT
+- DOMAIN,0d.kebhana.mx,DIRECT
+- DOMAIN,1337.abcvg.info,DIRECT
+- DOMAIN,api.ipv4online.uk,DIRECT
+- DOMAIN,bandito.byterunner.io,DIRECT
+- DOMAIN,bittorrent-tracker.e-n-c-r-y-p-t.net,DIRECT
+- DOMAIN,bt.ktrackers.com,DIRECT
+- DOMAIN,bt.okmp3.ru,DIRECT
+- DOMAIN,bt.poletracker.org,DIRECT
+- DOMAIN,bt1.xxxxbt.cc,DIRECT
+- DOMAIN,buny.uk,DIRECT
+- DOMAIN,ch3oh.ru,DIRECT
+- DOMAIN,concen.org,DIRECT
+- DOMAIN,d40969.acod.regrucolo.ru,DIRECT
+- DOMAIN,ec2-18-191-163-220.us-east-2.compute.amazonaws.com,DIRECT
+- DOMAIN,evan.im,DIRECT
+- DOMAIN,exodus.desync.com,DIRECT
+- DOMAIN,explodie.org,DIRECT
+- DOMAIN,finbytes.org,DIRECT
+- DOMAIN,fleira.no,DIRECT
+- DOMAIN,highteahop.top,DIRECT
+- DOMAIN,home.yxgz.club,DIRECT
+- DOMAIN,ipv4announce.sktorrent.eu,DIRECT
+- DOMAIN,ipv6.rer.lol,DIRECT
+- DOMAIN,isk.richardsw.club,DIRECT
+- DOMAIN,ismaarino.com,DIRECT
+- DOMAIN,leet-tracker.moe,DIRECT
+- DOMAIN,martin-gebhardt.eu,DIRECT
+- DOMAIN,ns-1.x-fins.com,DIRECT
+- DOMAIN,nyaa.tracker.wf,DIRECT
+- DOMAIN,open.acgtracker.com,DIRECT
+- DOMAIN,open.demonii.com,DIRECT
+- DOMAIN,open.dstud.io,DIRECT
+- DOMAIN,open.free-tracker.ga,DIRECT
+- DOMAIN,open.stealth.si,DIRECT
+- DOMAIN,open.tracker.cl,DIRECT
+- DOMAIN,open.tracker.ink,DIRECT
+- DOMAIN,open.trackerlist.xyz,DIRECT
+- DOMAIN,opentor.org,DIRECT
+- DOMAIN,opentracker.io,DIRECT
+- DOMAIN,p2p.publictracker.xyz,DIRECT
+- DOMAIN,p4p.arenabg.com,DIRECT
+- DOMAIN,retracker.hotplug.ru,DIRECT
+- DOMAIN,retracker.lanta.me,DIRECT
+- DOMAIN,retracker.spark-rostov.ru,DIRECT
+- DOMAIN,retracker.x2k.ru,DIRECT
+- DOMAIN,retracker01-msk-virt.corbina.net,DIRECT
+- DOMAIN,seeders-paradise.org,DIRECT
+- DOMAIN,servandroidkino.ru,DIRECT
+- DOMAIN,share.hkg-fansub.info,DIRECT
+- DOMAIN,shubt.net,DIRECT
+- DOMAIN,sparkle.ghostchu-services.top,DIRECT
+- DOMAIN,t.jaekr.sh,DIRECT
+- DOMAIN,t.overflow.biz,DIRECT
+- DOMAIN,taciturn-shadow.spb.ru,DIRECT
+- DOMAIN,tk.greedland.net,DIRECT
+- DOMAIN,torrentsmd.com,DIRECT
+- DOMAIN,tr.abir.ga,DIRECT
+- DOMAIN,tr.burnabyhighstar.com,DIRECT
+- DOMAIN,tr.nyacat.pw,DIRECT
+- DOMAIN,tr.zukizuki.org,DIRECT
+- DOMAIN,tr4ck3r.duckdns.org,DIRECT
+- DOMAIN,tracker-udp.gbitt.info,DIRECT
+- DOMAIN,tracker-zhuqiy.dgj055.icu,DIRECT
+- DOMAIN,tracker.0x7c0.com,DIRECT
+- DOMAIN,tracker.aburaya.live,DIRECT
+- DOMAIN,tracker.bittor.pw,DIRECT
+- DOMAIN,tracker.bjut.jp,DIRECT
+- DOMAIN,tracker.bt-hash.com,DIRECT
+- DOMAIN,tracker.bt4g.com,DIRECT
+- DOMAIN,tracker.bz,DIRECT
+- DOMAIN,tracker.corpscorp.online,DIRECT
+- DOMAIN,tracker.cyberia.is,DIRECT
+- DOMAIN,tracker.darkness.services,DIRECT
+- DOMAIN,tracker.ddunlimited.net,DIRECT
+- DOMAIN,tracker.dler.com,DIRECT
+- DOMAIN,tracker.dler.org,DIRECT
+- DOMAIN,tracker.dmcomic.org,DIRECT
+- DOMAIN,tracker.filemail.com,DIRECT
+- DOMAIN,tracker.fnix.net,DIRECT
+- DOMAIN,tracker.foreverpirates.co,DIRECT
+- DOMAIN,tracker.gcrenwp.top,DIRECT
+- DOMAIN,tracker.gigantino.net,DIRECT
+- DOMAIN,tracker.gmi.gd,DIRECT
+- DOMAIN,tracker.ipv6tracker.org,DIRECT
+- DOMAIN,tracker.ipv6tracker.ru,DIRECT
+- DOMAIN,tracker.kmzs123.cn,DIRECT
+- DOMAIN,tracker.kmzs123.top,DIRECT
+- DOMAIN,tracker.kuroy.me,DIRECT
+- DOMAIN,tracker.lilithraws.org,DIRECT
+- DOMAIN,tracker.lintk.me,DIRECT
+- DOMAIN,tracker.linvk.com,DIRECT
+- DOMAIN,tracker.moeking.me,DIRECT
+- DOMAIN,tracker.moxing.party,DIRECT
+- DOMAIN,tracker.mywaifu.best,DIRECT
+- DOMAIN,tracker.nanoha.org,DIRECT
+- DOMAIN,tracker.netmap.top,DIRECT
+- DOMAIN,tracker.ololosh.space,DIRECT
+- DOMAIN,tracker.opentrackr.org,DIRECT
+- DOMAIN,tracker.openwebtorrent.com,DIRECT
+- DOMAIN,tracker.pmman.tech,DIRECT
+- DOMAIN,tracker.qu.ax,DIRECT
+- DOMAIN,tracker.renfei.net,DIRECT
+- DOMAIN,tracker.sbsub.com,DIRECT
+- DOMAIN,tracker.skyts.net,DIRECT
+- DOMAIN,tracker.srv00.com,DIRECT
+- DOMAIN,tracker.tiny-vps.com,DIRECT
+- DOMAIN,tracker.torrent.eu.org,DIRECT
+- DOMAIN,tracker.torrust-demo.com,DIRECT
+- DOMAIN,tracker.tryhackx.org,DIRECT
+- DOMAIN,tracker.valete.tf,DIRECT
+- DOMAIN,tracker.vanitycore.co,DIRECT
+- DOMAIN,tracker.waaa.moe,DIRECT
+- DOMAIN,tracker.xiaoduola.xyz,DIRECT
+- DOMAIN,tracker.yemekyedim.com,DIRECT
+- DOMAIN,tracker1.520.jp,DIRECT
+- DOMAIN,tracker1.myporn.club,DIRECT
+- DOMAIN,tracker2.dler.org,DIRECT
+- DOMAIN,tracker2.itzmx.com,DIRECT
+- DOMAIN,tracker3.itzmx.com,DIRECT
+- DOMAIN,tracker4.itzmx.com,DIRECT
+- DOMAIN,tracker810.xyz,DIRECT
+- DOMAIN,ttk2.nbaonlineservice.com,DIRECT
+- DOMAIN,u4.trakx.crim.ist,DIRECT
+- DOMAIN,u6.trakx.crim.ist,DIRECT
+- DOMAIN,udp.tracker.projectk.org,DIRECT
+- DOMAIN,wepzone.net,DIRECT
+- DOMAIN,www.all4nothin.net,DIRECT
+- DOMAIN,www.genesis-sp.org,DIRECT
+- DOMAIN,www.torrent.eu.org,DIRECT
+- DOMAIN,www.torrentsnipe.info,DIRECT
+- DOMAIN,www.wareztorrent.com,DIRECT
+
+# --- Tracker CIDR IP段规则 ---
+- IP-CIDR,[IP]/32,DIRECT
