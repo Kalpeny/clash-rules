@@ -1,0 +1,3 @@
+# 自建服务直连规则 (199222.xyz 等)
+DOMAIN-SUFFIX,199222.xyz
+IP-CIDR,[IP]/24,no-resolve
