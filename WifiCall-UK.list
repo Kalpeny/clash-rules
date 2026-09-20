@@ -1,0 +1,25 @@
+# UK WiFi Calling 代理规则 (EE / Vodafone / O2 / 3UK)
+DOMAIN-KEYWORD,epdg.epc.mnc030.mcc234
+DOMAIN-KEYWORD,epdg.epc.mnc033.mcc234
+DOMAIN-SUFFIX,ee.co.uk
+DOMAIN-KEYWORD,epdg.epc.mnc015.mcc234
+DOMAIN-SUFFIX,entsrv-uk.vodafone.com
+DOMAIN-SUFFIX,vuk-gto.prod.ondemandconnectivity.com
+DOMAIN-SUFFIX,ss.epdg.epc.mnc015.mcc234.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ss.epdg.epc.geo.mnc015.mcc234.pub.3gppnetwork.org
+DOMAIN-KEYWORD,epdg.epc.mnc020.mcc234
+DOMAIN-KEYWORD,epdg.epc.mnc010.mcc234
+DOMAIN-KEYWORD,epdg.epc.mnc071.mcc234
+DOMAIN-SUFFIX,epdg.epc.mnc071.mcc234.pub.3gppnetwork.org
+DOMAIN-KEYWORD,mcc234
+IP-CIDR,[IP]/19,no-resolve
+IP-CIDR,[IP]/19,no-resolve
+DOMAIN,vfgb.idemia.io
+IP-CIDR,[IP]/17,no-resolve
+IP-CIDR,[IP]/16,no-resolve
+DOMAIN-SUFFIX,ct.ee.co.uk
+IP-CIDR,[IP]/16,no-resolve
+IP-CIDR,[IP]/19,no-resolve
+IP-CIDR,[IP]/23,no-resolve
+DOMAIN-SUFFIX,epdg.epc.mnc010.mcc234.pub.3gppnetwork.org
+DOMAIN-SUFFIX,ims.mnc010.mcc234.3gppnetwork.org
