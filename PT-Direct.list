@@ -6,9 +6,6 @@ DST-PORT,6881-6889
 DST-PORT,51413
 
 # --- 常见 PT 站点 & Tracker 关键词 ---
-DOMAIN-KEYWORD,announce
-DOMAIN-KEYWORD,torrent
-DOMAIN-KEYWORD,tracker
 DOMAIN-KEYWORD,m-team
 DOMAIN-KEYWORD,chdbits
 
@@ -277,4 +274,6 @@ DOMAIN,www.torrentsnipe.info
 DOMAIN,www.wareztorrent.com
 
 # --- Tracker CIDR IP段 ---
-IP-CIDR,[IP]/32
+IP-CIDR,207.241.226.111/32,no-resolve
+IP-CIDR,207.241.231.226/32,no-resolve
+IP-CIDR,52.58.128.163/32,no-resolve

@@ -1,6 +1,6 @@
 # 微信图片直连：BanProgramAD 会误拦这两个域名；此规则集须排在广告规则集前
 DOMAIN,wxsnsdy.wxs.qq.com
 DOMAIN,wxsnsdythumb.wxs.qq.com
-# 自建服务直连规则 (199222.xyz 等)
+# 自建服务与内网直连规则
 DOMAIN-SUFFIX,199222.xyz
-IP-CIDR,[IP]/24,no-resolve
+IP-CIDR,10.10.10.0/24,no-resolve
